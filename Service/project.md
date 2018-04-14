@@ -13,9 +13,9 @@ vue + vue-router + vue-resource + vuex + vant.js + Nuxt
 - .gitignore （git 忽略文件）
 
 # 服务器
-- xx.xx.xx（作用）
+- xx.xx.xx（测试）
 	- 源码存放路径
-- xx.xx.xx（作用）
+- xx.xx.xx（生产）
 	- 源码存放路径
 
 # 简要规范说明
