@@ -2,52 +2,51 @@
 
 # 项目名
 
-# 范例
-- 请求地址-范例
-	- 1xx.1xx.xx.xx:8081/name/1.0/user/xxx
-- 请求内容-范例
-```
+## 规范
+
+- 接口定义: host.com/projectname/1/infix/api
+
+- 使用RESTFUL-API
+	- GET (获取操作)
+	- POST (新增操作)
+	- PATCH (修改信息操作)
+	- PUT ()
+	- DELETE (删除操作)
+
+- header定义: { appVersion: '1.0.0', appToken: '' }
+
+## 用户模块(user)
+
+### 获取用户信息(getuserinfo)
+>GET
+
+```json
+// Request
+{}
+
+// Responent
 {
-	userId: 'xxx',
-	passWord: 'xxx',
-	token: 'xxx',
+	"code": 200, // 200：成功, 404：查询失败
+	"data": {}, // 
+	"msg": "",
 }
 ```
-- 返回内容-范例
 
->返回内容格式是规定的
+## 通用模块(common)
 
-```
+### 发送验证码(sendcode)
+>POST
+
+```json
+// Request
 {
-	code: 200, // number 只要没有逻辑错误都要返回200 其他状态由后端开发人员定义 （建议参照 网络状态status 定义）
-	data: {}, // object || array || number || string 原本应该返回数组的，哪怕数组长度为0 都要返回数组类型 以此类推
-	msg: '' // string 只能是字符串类型
+	"mobile": "159xxxxxxxx"
+}
+
+// Responent
+{
+	"code": 200, // 200：成功, 404：发送失败
+	"data": {}, // 
+	"msg": "",
 }
 ```
-
-# 服务器 --- xxx.com
-> 1xx.1xx.xx.xx
-8081
-
-# 前缀-infix
-/name/1.0/
-
-# 用户相关 --- user/
-
-## 用户登录d
-> login
-> post
-
-	// request
-	{
-		user_id: 'xxx',
-		password: 'xxx',
-	}
-	
-	// response
-	{
-		code: 200,
-		data: {},
-		msg: ''
-	}
-
